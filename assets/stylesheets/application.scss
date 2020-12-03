@@ -6,17 +6,19 @@ body {
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
-
+  display: flex;
   .cities {
     width: 30%;
   }
   .active-city {
     width: 70%;
+    height: 50vh;
     margin-left: 20px;
     margin-bottom: 20px;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-size: cover;
     h3 {
       margin-top: 0;
     }

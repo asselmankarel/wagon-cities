@@ -3,7 +3,7 @@ const citiesReducer = (state, action) => {
     case 'SET_CITIES':
       return action.payload;
     default:
-      return [];
+      return state || [];
   }
 };
 

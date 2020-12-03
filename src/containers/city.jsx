@@ -27,8 +27,5 @@ function MapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-function MapReduxStateToProps() {
 
-}
-
-export default connect(MapReduxStateToProps, MapDispatchToProps)(City);
+export default connect(null, MapDispatchToProps)(City);
