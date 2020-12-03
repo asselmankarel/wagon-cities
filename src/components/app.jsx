@@ -1,13 +1,28 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import React, { PureComponent } from 'react';
 import CityList from '../containers/city_list';
+import City from '../containers/city';
 
-const App = () => {
-  return (
-    <div className="app">
-      <CityList />
-      <div className="active-city" />
-    </div>
-  );
-};
+class App extends PureComponent {
 
-export default App;
+  render() {
+    const { selectedCity } = this.props;
+    return (
+      <div className="app">
+        <CityList />
+        {selectedCity !== null &&
+          <div className="selected-city">
+            <City city={selectedCity} key={selectedCity.name} />
+          </div>
+        }
+      </div>
+    );
+  }
+  
+}
+
+function mapReduxStateToProps(reduxState) {
+  return { selectedCity: reduxState.selectedCity };
+}
+
+export default connect(mapReduxStateToProps)(App);
